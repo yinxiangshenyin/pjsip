@@ -24,7 +24,7 @@ Qthread:
 		workThread = mythread()
 		workThread.send.connect(get_function) 
 		-------------
-		#in other thread
+		#in other thread the workThread passed to the thread as myworkThread. 
 		myworkThread.setValue("ceshi", 123)  
 		myworkThread.start()
 		-------------
