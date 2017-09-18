@@ -19,7 +19,7 @@ Qthread:
 				elf.number=number
 			  def run(self):
 				self.send.emit(self.state,self.number)
-	    -------------
+	        -------------
 		#globle variable
 		workThread = mythread()
 		workThread.send.connect(get_function) 
