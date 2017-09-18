@@ -10,36 +10,25 @@ Qthread:
 	1、import pyQt5.QtCore
 	2、新建一个class 继承 QtCore.QThread
 	    from PyQt4 import QtCore
-	    class TimeThread(QtCore.QThread):
-			  signal_time = QtCore.pyqtSignal(str, int) # 信号
-			  def __init__(self, parent=None):
-				super(TimeThread, self).__init__(parent)
-			  def start_timer(self):
-				self.num = 0
-				self.start()
-			  def run(self):				
-				self.signal_time.emit("Running time:", self.num) # 发送信号
-				self.num += 1
-	    class TimeDialog(QWidget):
-			  def __init__(self):
-				super(TimeDialog, self).__init__()
-				self.timer_t = TimeThread()
-				self.timer_t.signal_time.connect(self.update_timer_tv) 
-			  def init_ui(self):
-				start_btn = QPushButton('Start', self)
-				start_btn.setToolTip("Click to start")
-				start_btn.move(50, 150)
-				self.connect(start_btn, QtCore.SIGNAL("clicked()"), self.click_start_btn)			 
-			  def click_start_btn(self):
-				self.timer_t.start_timer()
-			  def update_timer_tv(self, text, number):
-				self.timer_tv.setText(self.tr(text + " " + str(number)))
-		if __name__ == '__main__':
-		  app = QApplication(sys.argv)
-		  time_dialog = TimeDialog()
-		  time_dialog.show()
-		 
-		  sys.exit(app.exec_())
+		class mythread(QThread):
+			  send=pyqtSignal(str,int)
+			  def __int__(self):
+				super(mythread, self).__init__()
+			  def setValue(self,state,number):
+				self.state=state
+				elf.number=number
+			  def run(self):
+				self.send.emit(self.state,self.number)
+	    -------------
+		#globle variable
+		workThread = mythread()
+		workThread.send.connect(get_function) 
+		-------------
+		#in other thread
+		myworkThread.setValue("ceshi", 123)  
+		myworkThread.start()
+		-------------
+
     3、注意点
 	    thread需要是全局变量，因为如果在定义为局部变量，会在函数结束时自动销毁，从而使得线程的run函数未执行就结束
 ------------------------------------------------------------------------------------------------------------------------
