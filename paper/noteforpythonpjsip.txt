@@ -1,4 +1,25 @@
 this note is for the design of the python pjsip
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+在python环境中安装pjsua的步骤
+1、下载最新的pjsip源码 http://www.pjsip.org/
+2、下载支持python3的pjsua源码并复制到pjsip相对应的位置https://github.com/mgwilliams/python3-pjsip
+3、用vs2015/vs2008打开pjsip,选择debuge/release 以及win32的编译方式
+4、将python_pjsua选择为启动项，并添加dirtx和python的include、lib到python_pjsua的工程环境
+		Add Python include directory (e.g. C:\Python24\include) to Visual Studio include directories.
+		Add Python library directory (e.g. C:\Python24\libs) to Visual Studio library directories.
+		C:\Python24\  #包含python.dll
+		DirectX\include
+		DirectX\Lib\X86
+5、编译python_pjsua
+6、Go to pjsip-apps\src\python directory
+   Run python setup-vc.py install (note that the installation script is setup-vc.py and not setup.py).
+   
+7、在python的环境下import pjsua
+
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 data:2017-9-18
