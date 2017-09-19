@@ -59,8 +59,7 @@ date: 2017-9-19
 plantices:
 	1、根据官网下载设备管理客户端
 	2、根据官网的python脚本获取设备信息，需要循环不断的调用get_events()方法获取事件信息
-	    125688-
-		
+	3、phtronices sdk   
     
 
 
