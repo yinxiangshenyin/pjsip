@@ -4,7 +4,7 @@ this note is for the design of the python pjsip
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 
-在python环境中安装pjsua的步骤
+在python环境中安装pjsua的步骤 关键词：python pjsua
 1、下载最新的pjsip源码 http://www.pjsip.org/
 2、下载支持python3的pjsua源码并复制到pjsip相对应的位置https://github.com/mgwilliams/python3-pjsip
 3、用vs2015/vs2008打开pjsip,选择debuge/release 以及win32的编译方式
@@ -59,7 +59,29 @@ date: 2017-9-19
 plantices:
 	1、根据官网下载设备管理客户端
 	2、根据官网的python脚本获取设备信息，需要循环不断的调用get_events()方法获取事件信息
-	3、phtronices sdk   
+	3、phtronices sdk  
+	
+	待完整。。。。。
+	
+pdf转word：
+    1、百度下载“wmPDFzhcWord”----http://www.jb51.net/softs/397601.html
+	2、解压并将COMDLG32.OCX复制到文件夹C:\Windows\SysWOW64 --这是64位的电脑，32位的系统放在 c:\Windows\system32
+	3、以管理员的方式运行CMD 输入regsvr32 C:\Windows\SysWOW64\COMDLG32.OCX
+	4、运行完美PDF转换成Word转换器.exe
+	注意：
+		如果出现“DllRegisterServer的调用失败”则是没有以管理员运行CMD
+		
+mathtype：
+	1、下载mathtype 并安装到自定义的路径上
+	2、在安装路径中打开mathtype.exe 既可以进行公式编辑
+	3、编辑好的公式可以复制到word上即可
+	
+	注意
+	    通过 样式-数字 可以将打出的字符变成倾斜
+		在 样式-文本 的环境下可以给公式打上空格
+		想要粗体并倾斜可以编辑 样式-定义-向量矩阵：勾上粗体和斜体，在使用过程中将输入的字符定义为向量矩阵即可实现字符效果
+
+		
     
 
 
